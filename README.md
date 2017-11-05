@@ -1,4 +1,4 @@
-## Find recently updated repositories in GitHub. 
+## Find recently updated repositories in GitHub by programming language
 
  Made using [Angular 5](https://angular.io/), [Bootstrap 4](https://getbootstrap.com/) and [GitHub Search API](https://developer.github.com/v3/search/#search-repositories).
  
