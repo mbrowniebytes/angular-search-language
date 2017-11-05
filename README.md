@@ -25,4 +25,4 @@
 
 ## Serve this project and visit localhost:4200
 
-`npm start`
+`npm serve`
