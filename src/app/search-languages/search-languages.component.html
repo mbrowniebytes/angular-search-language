@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <h2>Find recently updated repositories in GitHub</h2>
+      Made using <a href="https://angular.io/" class="fa fa-external-link" target="_blank">Angular 5</a>, 
+      <a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" class="fa fa-external-link" target="_blank">Bootstrap 4</a>
+      and
+      <a href="https://developer.github.com/v3/search/#search-repositories" class="fa fa-external-link" target="_blank">GitHub Search API</a>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+      <div class="form-inline my-4">
+        <input placeholder="Language e.g. PHP" class="form-control input-lg input" #language (keyup.enter)="search(language.value);" />
+        <button class="btn btn-primary btn-lg" (click)="search(language.value);">Search</button>
+      </div>
+  </div>
+  <div class="row">
+    <p class="text-center" style="padding: 1em; color:red;" *ngIf="error_text">{{ error_text }}</p>
+
+    <div [ngClass]="{'col-9': selected, 'col-12': !selected}">
+      <div class="row">
+      <div class="repository col-2 text-center flex-wrap" *ngFor="let repository of results" (click)="getDetails(repository)">
+        <div class="img_container">
+          <img src="{{repository.owner.avatar_url}}" class="img-circle" width="100" height="100">
+        </div>
+        <div class="details_container">
+          <a href="{{repository.html_url}}" class="fa fa-external-link" target="_blank">{{ repository.full_name }}</a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div *ngIf="results.length && selected" class="col-3"> 
+      <div class="box text-center">
+        <img src="{{selectedRepository.owner.avatar_url}}" class="img-responsive img-circle" width="100" height="100">
+        <div class="details">
+          <div *ngIf="selectedRepository.name"><a href="{{ selectedRepository.html_url }}" class="fa fa-external-link " target="_blank"><h3>{{ selectedRepository.name }} </h3></a></div>
+          <div *ngIf="selectedRepository.description">Description: {{ selectedRepository.description }}</div>
+          <hr>
+          <div>Stars: {{ selectedRepository.stargazers_count || 0 }}</div>
+          <div>Watchers: {{ selectedRepository.watchers_count || 0 }}</div>
+          <div>Forks: {{ selectedRepository.forks_count || 0 }}</div>
+          <hr>
+          <div *ngIf="selectedRepository.updated_at">Last updated: {{ selectedRepository.updated_at | date }}</div>
+          <div *ngIf="selectedRepository.created_at">Created: {{ selectedRepository.created_at | date }}</div>
+          <hr>
+          <button class="btn btn-sm btn-warning" (click)="selected = !selected">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

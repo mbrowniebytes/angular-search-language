@@ -1,0 +1,24 @@
+
+
+  .repository {
+    border: 1px solid #2b499e;
+    cursor: pointer;
+    padding: 1em;
+    margin: 0.7em;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .repository:hover {
+    box-shadow: 2px 3px 4px #aaa;
+  }
+  
+  .box {
+    border: 2px solid #2b499e;
+    padding: 1em;
+  }
+  
+  .box > .details {
+    margin-top: 1em;
+  }
+  
