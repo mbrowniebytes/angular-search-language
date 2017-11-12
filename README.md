@@ -5,7 +5,8 @@
  Code is based on the tutorial [Make Angular 4 app using GitHub API]( https://applyhead.com/angular-4-tutorial-make-angular-4-app-using-github-api/)
  
  Instead of searching for developers, the code now searches for recently updated repositories in GitHub.  
- Also, the code was updated to work with Angular 5 and Bootstrap 4.
+ Also, the code was updated to work with Angular 5 and Bootstrap 4.  
+ And of course the normal searching google, stackoverflow, and related offical documentations.
  
  Screenshot of application
  ![Screenshot of application](screenshot.png)
@@ -23,6 +24,6 @@
 `npm install bootstrap@next`  
 `npm install font-awesome`  
 
-## Serve this project and visit localhost:4200
+## Serve the project and visit localhost:4200
 
 `npm serve`
